@@ -16,6 +16,11 @@
 		43411AB7284114DD003C5182 /* TTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43411AB6284114DD003C5182 /* TTVTests.swift */; };
 		43411AC1284114DD003C5182 /* TTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43411AC0284114DD003C5182 /* TTVUITests.swift */; };
 		43411AC3284114DD003C5182 /* TTVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43411AC2284114DD003C5182 /* TTVUITestsLaunchTests.swift */; };
+		43411ADB2841209D003C5182 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43411AD62841209D003C5182 /* Poppins-Light.ttf */; };
+		43411ADC2841209D003C5182 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43411AD72841209D003C5182 /* Poppins-Medium.ttf */; };
+		43411ADD2841209D003C5182 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43411AD82841209D003C5182 /* Poppins-Bold.ttf */; };
+		43411ADE2841209D003C5182 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43411AD92841209D003C5182 /* Poppins-Regular.ttf */; };
+		43411ADF2841209D003C5182 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43411ADA2841209D003C5182 /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		43411ABC284114DD003C5182 /* TTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43411AC0284114DD003C5182 /* TTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTVUITests.swift; sourceTree = "<group>"; };
 		43411AC2284114DD003C5182 /* TTVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43411AD62841209D003C5182 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		43411AD72841209D003C5182 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		43411AD82841209D003C5182 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		43411AD92841209D003C5182 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		43411ADA2841209D003C5182 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +138,7 @@
 		43411ACF28411B9D003C5182 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				43411AD528411F34003C5182 /* Fonts */,
 				43411AA5284114DB003C5182 /* Main.storyboard */,
 				43411AA8284114DD003C5182 /* Assets.xcassets */,
 				43411AAA284114DD003C5182 /* LaunchScreen.storyboard */,
@@ -173,6 +184,18 @@
 			children = (
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		43411AD528411F34003C5182 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				43411AD82841209D003C5182 /* Poppins-Bold.ttf */,
+				43411AD62841209D003C5182 /* Poppins-Light.ttf */,
+				43411AD72841209D003C5182 /* Poppins-Medium.ttf */,
+				43411AD92841209D003C5182 /* Poppins-Regular.ttf */,
+				43411ADA2841209D003C5182 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,8 +303,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				43411AAC284114DD003C5182 /* LaunchScreen.storyboard in Resources */,
+				43411ADD2841209D003C5182 /* Poppins-Bold.ttf in Resources */,
+				43411ADE2841209D003C5182 /* Poppins-Regular.ttf in Resources */,
 				43411AA9284114DD003C5182 /* Assets.xcassets in Resources */,
 				43411AA7284114DB003C5182 /* Main.storyboard in Resources */,
+				43411ADF2841209D003C5182 /* Poppins-SemiBold.ttf in Resources */,
+				43411ADB2841209D003C5182 /* Poppins-Light.ttf in Resources */,
+				43411ADC2841209D003C5182 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resource/TTV/Info.plist;
+				INFOPLIST_FILE = TTV/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -513,7 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resource/TTV/Info.plist;
+				INFOPLIST_FILE = TTV/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
