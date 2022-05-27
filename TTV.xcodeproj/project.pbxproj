@@ -99,13 +99,11 @@
 		43411A9E284114DB003C5182 /* TTV */ = {
 			isa = PBXGroup;
 			children = (
-				43411A9F284114DB003C5182 /* AppDelegate.swift */,
-				43411AA1284114DB003C5182 /* SceneDelegate.swift */,
-				43411AA3284114DB003C5182 /* ViewController.swift */,
-				43411AA5284114DB003C5182 /* Main.storyboard */,
-				43411AA8284114DD003C5182 /* Assets.xcassets */,
-				43411AAA284114DD003C5182 /* LaunchScreen.storyboard */,
-				43411AAD284114DD003C5182 /* Info.plist */,
+				43411AD028411BA3003C5182 /* Application */,
+				43411AD428411C75003C5182 /* Common */,
+				43411AD228411BE2003C5182 /* Domain */,
+				43411AD128411BD7003C5182 /* Presentation */,
+				43411ACF28411B9D003C5182 /* Resource */,
 			);
 			path = TTV;
 			sourceTree = "<group>";
@@ -125,6 +123,56 @@
 				43411AC2284114DD003C5182 /* TTVUITestsLaunchTests.swift */,
 			);
 			path = TTVUITests;
+			sourceTree = "<group>";
+		};
+		43411ACF28411B9D003C5182 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				43411AA5284114DB003C5182 /* Main.storyboard */,
+				43411AA8284114DD003C5182 /* Assets.xcassets */,
+				43411AAA284114DD003C5182 /* LaunchScreen.storyboard */,
+				43411AAD284114DD003C5182 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		43411AD028411BA3003C5182 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				43411A9F284114DB003C5182 /* AppDelegate.swift */,
+				43411AA1284114DB003C5182 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		43411AD128411BD7003C5182 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				43411AD328411C25003C5182 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		43411AD228411BE2003C5182 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		43411AD328411C25003C5182 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43411AA3284114DB003C5182 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43411AD428411C75003C5182 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TTV/Info.plist;
+				INFOPLIST_FILE = Resource/TTV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -465,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TTV/Info.plist;
+				INFOPLIST_FILE = Resource/TTV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
