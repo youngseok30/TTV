@@ -12,7 +12,7 @@ final class DefaultAppCoordinator: AppCoordinator {
     weak var finishDelegate: CoordinatorFinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
-    var type: CoordinatorType = .auth
+    var type: CoordinatorType = .app
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController

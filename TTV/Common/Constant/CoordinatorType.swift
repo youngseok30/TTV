@@ -9,6 +9,6 @@ import Foundation
 
 enum CoordinatorType {
     
-    case app, splash, introduce, auth
+    case app, splash, introduce, login
     
 }

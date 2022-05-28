@@ -34,4 +34,8 @@ extension CALayer {
         }
     }
     
+    func addBasicShadow() {
+        addShadow(color: .black, alpha: 0.25, x: 0, y: 4, blur: 4, spread: 0)
+    }
+    
 }

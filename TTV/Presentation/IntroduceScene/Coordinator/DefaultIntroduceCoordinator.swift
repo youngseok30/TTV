@@ -31,7 +31,10 @@ final class DefaultIntroduceCoordinator: IntroduceCoordinator {
     }
     
     func showAuth() {
-        
+        let coordinator = DefaultLoginCoordinator(self.navigationController)
+        coordinator.finishDelegate = self
+        coordinator.start()
+        self.childCoordinators.append(coordinator)
     }
     
 }

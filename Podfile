@@ -10,6 +10,7 @@ target 'TTV' do
   pod 'RxRelay'
   pod 'SnapKit'
   pod 'RxCocoa'
+  pod 'RxGesture'
 
   target 'TTVTests' do
     inherit! :search_paths
