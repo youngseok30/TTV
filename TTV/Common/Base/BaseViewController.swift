@@ -25,4 +25,8 @@ class BaseViewController: UIViewController {
         bindViewModel()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }

@@ -9,5 +9,5 @@ import Foundation
 
 protocol SplashCoordinator: Coordinator {
     
-    func showIntroduce(_ index: Int)
+    func showIntroduce()
 }

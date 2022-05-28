@@ -39,6 +39,13 @@
 		437E0819284197A400A8EAEF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E0818284197A400A8EAEF /* UILabel+Extension.swift */; };
 		437E081B2841988700A8EAEF /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E081A2841988700A8EAEF /* UIFont+CustomFont.swift */; };
 		437E081D2841A6F600A8EAEF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E081C2841A6F600A8EAEF /* UIColor+Extension.swift */; };
+		437E08282841AF8E00A8EAEF /* IntroduceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E08272841AF8E00A8EAEF /* IntroduceCoordinator.swift */; };
+		437E082A2841B37D00A8EAEF /* DefaultIntroduceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E08292841B37D00A8EAEF /* DefaultIntroduceCoordinator.swift */; };
+		437E082C2841B3FD00A8EAEF /* IntroduceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E082B2841B3FD00A8EAEF /* IntroduceViewModel.swift */; };
+		437E082E2841B7D000A8EAEF /* IntroduceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E082D2841B7D000A8EAEF /* IntroduceData.swift */; };
+		437E08302841B99C00A8EAEF /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E082F2841B99C00A8EAEF /* IntroduceViewController.swift */; };
+		437E08322841CA2200A8EAEF /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E08312841CA2200A8EAEF /* UIColor+CustomColor.swift */; };
+		437E08342841D9B200A8EAEF /* IntroduceViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E08332841D9B100A8EAEF /* IntroduceViewModelTests.swift */; };
 		438A612D23B25BE3B4437ACB /* Pods_TTVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAECA1862E51CAE60DA22349 /* Pods_TTVTests.framework */; };
 		5551D696BB24E9680F050070 /* Pods_TTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB500B1D6EF79C4E6889B15B /* Pods_TTV.framework */; };
 		C37096939ACE3C4DD8D207F7 /* Pods_TTV_TTVUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F592689ECE819138DA14510 /* Pods_TTV_TTVUITests.framework */; };
@@ -100,6 +107,13 @@
 		437E0818284197A400A8EAEF /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		437E081A2841988700A8EAEF /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
 		437E081C2841A6F600A8EAEF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		437E08272841AF8E00A8EAEF /* IntroduceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceCoordinator.swift; sourceTree = "<group>"; };
+		437E08292841B37D00A8EAEF /* DefaultIntroduceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultIntroduceCoordinator.swift; sourceTree = "<group>"; };
+		437E082B2841B3FD00A8EAEF /* IntroduceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewModel.swift; sourceTree = "<group>"; };
+		437E082D2841B7D000A8EAEF /* IntroduceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceData.swift; sourceTree = "<group>"; };
+		437E082F2841B99C00A8EAEF /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
+		437E08312841CA2200A8EAEF /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
+		437E08332841D9B100A8EAEF /* IntroduceViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewModelTests.swift; sourceTree = "<group>"; };
 		4F592689ECE819138DA14510 /* Pods_TTV_TTVUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTV_TTVUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F91980BEF8DB4D3EC203D2E /* Pods-TTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTV.release.xcconfig"; path = "Target Support Files/Pods-TTV/Pods-TTV.release.xcconfig"; sourceTree = "<group>"; };
 		898B6BB17F857D4E5362C429 /* Pods-TTVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTVTests.release.xcconfig"; path = "Target Support Files/Pods-TTVTests/Pods-TTVTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +190,7 @@
 			children = (
 				43411AB6284114DD003C5182 /* TTVTests.swift */,
 				437E080C284135DF00A8EAEF /* SplashViewModelTests.swift */,
+				437E08332841D9B100A8EAEF /* IntroduceViewModelTests.swift */,
 			);
 			path = TTVTests;
 			sourceTree = "<group>";
@@ -216,6 +231,7 @@
 				437E07E8284126D600A8EAEF /* Common */,
 				43411AD328411C25003C5182 /* View */,
 				437E07F728412D2200A8EAEF /* SplashScene */,
+				437E08222841AF3F00A8EAEF /* IntroduceScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -297,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				437E07F12841289800A8EAEF /* CoordinatorType.swift */,
+				437E082D2841B7D000A8EAEF /* IntroduceData.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -385,8 +402,52 @@
 				437E0818284197A400A8EAEF /* UILabel+Extension.swift */,
 				437E081A2841988700A8EAEF /* UIFont+CustomFont.swift */,
 				437E081C2841A6F600A8EAEF /* UIColor+Extension.swift */,
+				437E08312841CA2200A8EAEF /* UIColor+CustomColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		437E08222841AF3F00A8EAEF /* IntroduceScene */ = {
+			isa = PBXGroup;
+			children = (
+				437E08232841AF5D00A8EAEF /* Coordinator */,
+				437E08252841AF7000A8EAEF /* ViewController */,
+				437E08242841AF6C00A8EAEF /* VIewModel */,
+			);
+			path = IntroduceScene;
+			sourceTree = "<group>";
+		};
+		437E08232841AF5D00A8EAEF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				437E08262841AF8000A8EAEF /* Protocol */,
+				437E08292841B37D00A8EAEF /* DefaultIntroduceCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		437E08242841AF6C00A8EAEF /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				437E082B2841B3FD00A8EAEF /* IntroduceViewModel.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		437E08252841AF7000A8EAEF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				437E082F2841B99C00A8EAEF /* IntroduceViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		437E08262841AF8000A8EAEF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				437E08272841AF8E00A8EAEF /* IntroduceCoordinator.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		77DDE89D0F90622E996651CC /* Pods */ = {
@@ -678,21 +739,27 @@
 				437E081B2841988700A8EAEF /* UIFont+CustomFont.swift in Sources */,
 				437E07EC2841272E00A8EAEF /* Coordinator.swift in Sources */,
 				437E08152841972E00A8EAEF /* UIView+Extension.swift in Sources */,
+				437E082E2841B7D000A8EAEF /* IntroduceData.swift in Sources */,
 				437E07F22841289800A8EAEF /* CoordinatorType.swift in Sources */,
 				437E08042841308500A8EAEF /* SplashViewModel.swift in Sources */,
 				437E07FE28412E2E00A8EAEF /* SplashCoordinator.swift in Sources */,
 				437E0810284191A500A8EAEF /* BaseViewController.swift in Sources */,
 				43411AA4284114DB003C5182 /* ViewController.swift in Sources */,
 				437E0819284197A400A8EAEF /* UILabel+Extension.swift in Sources */,
+				437E082A2841B37D00A8EAEF /* DefaultIntroduceCoordinator.swift in Sources */,
 				437E080028412F2C00A8EAEF /* DefaultSplashCoordinator.swift in Sources */,
 				437E07F428412A6B00A8EAEF /* AppCoordinator.swift in Sources */,
+				437E08322841CA2200A8EAEF /* UIColor+CustomColor.swift in Sources */,
 				437E08172841978300A8EAEF /* CALayer+Extension.swift in Sources */,
+				437E08302841B99C00A8EAEF /* IntroduceViewController.swift in Sources */,
 				437E07F628412AC200A8EAEF /* DefaultAppCoordinator.swift in Sources */,
 				43411AA0284114DB003C5182 /* AppDelegate.swift in Sources */,
 				437E080B2841329700A8EAEF /* DefaultSplashUseCase.swift in Sources */,
 				43411AA2284114DB003C5182 /* SceneDelegate.swift in Sources */,
 				437E08022841303F00A8EAEF /* SplashViewController.swift in Sources */,
+				437E08282841AF8E00A8EAEF /* IntroduceCoordinator.swift in Sources */,
 				437E08092841326900A8EAEF /* SplashUseCase.swift in Sources */,
+				437E082C2841B3FD00A8EAEF /* IntroduceViewModel.swift in Sources */,
 				437E081D2841A6F600A8EAEF /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +770,7 @@
 			files = (
 				43411AB7284114DD003C5182 /* TTVTests.swift in Sources */,
 				437E080D284135DF00A8EAEF /* SplashViewModelTests.swift in Sources */,
+				437E08342841D9B200A8EAEF /* IntroduceViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

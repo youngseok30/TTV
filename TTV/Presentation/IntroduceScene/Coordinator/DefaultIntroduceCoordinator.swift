@@ -1,5 +1,5 @@
 //
-//  DefaultSplashCoordinator.swift
+//  DefaultIntroduceCoordinator.swift
 //  TTV
 //
 //  Created by Ethan Lee on 2022/05/28.
@@ -8,37 +8,35 @@
 import Foundation
 import UIKit
 
-final class DefaultSplashCoordinator: SplashCoordinator {
+final class DefaultIntroduceCoordinator: IntroduceCoordinator {
+    
     weak var finishDelegate: CoordinatorFinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
-    var type: CoordinatorType = .splash
-    var splashViewController: SplashViewController
+    var type: CoordinatorType = .introduce
+    var introduceViewController: IntroduceViewController
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.splashViewController = SplashViewController()
+        self.introduceViewController = IntroduceViewController()
     }
     
     func start() {
-        self.splashViewController.viewModel = SplashViewModel(coordinator: self)
-        self.navigationController.pushViewController(self.splashViewController, animated: true)
+        self.introduceViewController.viewModel = IntroduceViewModel(coordinator: self)
+        self.navigationController.pushViewController(self.introduceViewController, animated: true)
     }
     
     func finish() {
         self.finishDelegate?.coordinatorDidFinish(childCoordinator: self)
     }
     
-    func showIntroduce() {
-        let coordinator = DefaultIntroduceCoordinator(self.navigationController)
-        coordinator.finishDelegate = self
-        coordinator.start()
-        self.childCoordinators.append(coordinator)
+    func showAuth() {
+        
     }
     
 }
 
-extension DefaultSplashCoordinator: CoordinatorFinishDelegate {
+extension DefaultIntroduceCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
         self.childCoordinators.removeAll()
         self.finishDelegate?.coordinatorDidFinish(childCoordinator: self)

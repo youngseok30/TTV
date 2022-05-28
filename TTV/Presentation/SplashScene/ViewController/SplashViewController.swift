@@ -37,7 +37,6 @@ final class SplashViewController: BaseViewController {
         label.textAlignment = .left
         label.textColor = .white
         label.font = UIFont.Poppins(.SemiBold, size: 42)
-        label.setLineHeightAndLetterSpacing(lineHeight: 50, letterSpacing: -0.08)
         label.numberOfLines = 0
         label.text = "A.I\nVideo Making\nSoftware"
         return label
@@ -69,6 +68,9 @@ final class SplashViewController: BaseViewController {
         self.view.addSubview(titleLabel)
         self.view.addSubview(startButton)
         self.view.addSubview(companyLabel)
+        self.view.layer.addShadow(color: .black, alpha: 0.25, x: 0, y: 4, blur: 4, spread: 0)
+        
+        titleLabel.setLineHeightAndLetterSpacing(lineHeight: 50, letterSpacing: -0.08)
     }
     
     override func setupConstraints() {
@@ -110,13 +112,9 @@ final class SplashViewController: BaseViewController {
         let output = self.viewModel?.convert(input: input, disposeBag: self.disposeBag)
         output?.isStarted
             .asDriver(onErrorJustReturn: false)
-            .drive(onNext: { [weak self] isStarted in
-                if isStarted {
-                    
-                }
+            .drive(onNext: { _ in
             })
-            .disposed(by: self.disposeBag)
-        
+            .disposed(by: self.disposeBag)        
     }
     
 }

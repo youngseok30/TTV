@@ -21,9 +21,16 @@ final class DefaultAppCoordinator: AppCoordinator {
     
     func start() {
         let coordinator = DefaultSplashCoordinator(self.navigationController)
-//        coordinator.finishDelegate = self
+        coordinator.finishDelegate = self
         coordinator.start()
         childCoordinators.append(coordinator)
     }
     
+}
+
+extension DefaultAppCoordinator: CoordinatorFinishDelegate {
+    func coordinatorDidFinish(childCoordinator: Coordinator) {
+        self.childCoordinators = self.childCoordinators.filter({ $0.type != childCoordinator.type })
+        self.navigationController.viewControllers.removeAll()
+    }
 }

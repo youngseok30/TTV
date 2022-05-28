@@ -15,9 +15,11 @@ extension UIColor {
 
         if hex.hasPrefix("#") {
             let start = hex.index(hex.startIndex, offsetBy: 1)
-            let hexColor = String(hex[start...])
+            var hexColor = String(hex[start...])
 
-            if hexColor.count == 8 {
+            if hexColor.count == 8 || hexColor.count == 6 {
+                if hexColor.count == 6 { hexColor += "FF" }
+                
                 let scanner = Scanner(string: hexColor)
                 var hexNumber: UInt64 = 0
 
