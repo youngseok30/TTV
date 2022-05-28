@@ -23,13 +23,11 @@ final class DefaultLoginUseCase: LoginUseCase {
             return
         }
         
-        guard mail.isEmpty else {
-            loginResult.onNext(.failure(.emptyEmail))
+        guard !mail.isEmpty else {
             return
         }
         
-        guard pass.isEmpty else {
-            loginResult.onNext(.failure(.emptyPassword))
+        guard !pass.isEmpty else {
             return
         }
         

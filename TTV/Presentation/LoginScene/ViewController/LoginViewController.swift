@@ -253,7 +253,9 @@ final class LoginViewController: BaseViewController {
             logInTapEvent: self.loginButton.rx.tap.asObservable(),
             signUpTapEvent: self.signUpButton.rx.tap.asObservable(),
             googleLogInTapEvent: self.googleLoginButton.rx.tap.asObservable(),
-            fbLogInTapEvent: self.fbLoginButton.rx.tap.asObservable())
+            fbLogInTapEvent: self.fbLoginButton.rx.tap.asObservable(),
+            emailText: self.emailTextField.rx.text.orEmpty.asObservable(),
+            passwordText: self.passwordTextField.rx.text.orEmpty.asObservable())
         
         let output = viewModel?.convert(input: input, disposeBag: disposeBag)
         output?.errorString
@@ -269,15 +271,17 @@ final class LoginViewController: BaseViewController {
             })
             .disposed(by: self.disposeBag)
         
-        output?.passwordTextField
-            .subscribe({ [weak self] password in
+        output?.passwordTextFieldTapEvent
+            .filter { $0 }
+            .subscribe({ [weak self] result in
                 self?.passwordTextField.makeBorder(color: .textFieldFocus, borderWidth: 1)
                 self?.emailTextField.makeBorder(color: nil, borderWidth: 0)
             })
             .disposed(by: self.disposeBag)
         
-        output?.emailTextField
-            .subscribe({ [weak self] email in
+        output?.emailTextFieldTapEvent
+            .filter { $0 }
+            .subscribe({ [weak self] result in
                 self?.emailTextField.makeBorder(color: .textFieldFocus, borderWidth: 1)
                 self?.passwordTextField.makeBorder(color: nil, borderWidth: 0)
             })

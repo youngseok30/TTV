@@ -27,12 +27,16 @@ final class LoginViewModel {
         let signUpTapEvent: Observable<Void>
         let googleLogInTapEvent: Observable<Void>
         let fbLogInTapEvent: Observable<Void>
+        let emailText: Observable<String>
+        let passwordText: Observable<String>
     }
     
     struct Output {
         var errorString = BehaviorRelay<String>(value: "")
         let emailTextField = BehaviorRelay<String>(value: "")
         let passwordTextField = BehaviorRelay<String>(value: "")
+        let emailTextFieldTapEvent = BehaviorRelay<Bool>(value: false)
+        let passwordTextFieldTapEvent = BehaviorRelay<Bool>(value: false)
     }
     
     func convert(input: Input, disposeBag: DisposeBag) -> Output {
@@ -58,6 +62,14 @@ final class LoginViewModel {
                 self?.useCase.fbLogin()
             })
             .disposed(by: disposeBag)
+        
+        input.emailText
+            .bind(to: self.useCase.email)
+            .disposed(by: disposeBag)
+        
+        input.passwordText
+            .bind(to: self.useCase.password)
+            .disposed(by: disposeBag)
     }
     
     private func setupOutput(input: Input, disposeBag: DisposeBag) -> Output {
@@ -79,15 +91,15 @@ final class LoginViewModel {
             .disposed(by: disposeBag)
         
         input.emailTextFieldTapEvent
-            .withLatestFrom(self.useCase.email)
-            .compactMap { $0 }
-            .bind(to: output.emailTextField)
+            .subscribe(onNext: { _ in
+                output.emailTextFieldTapEvent.accept(true)
+            })
             .disposed(by: disposeBag)
         
         input.passwordTextFieldTapEvent
-            .withLatestFrom(self.useCase.password)
-            .compactMap { $0 }
-            .bind(to: output.passwordTextField)
+            .subscribe(onNext: { _ in
+                output.passwordTextFieldTapEvent.accept(true)
+            })
             .disposed(by: disposeBag)
         
         input.logInTapEvent
@@ -102,8 +114,8 @@ final class LoginViewModel {
             .disposed(by: disposeBag)
         
         self.useCase.password
-            .subscribe(onNext: { email in
-                output.passwordTextField.accept(email)
+            .subscribe(onNext: { password in
+                output.passwordTextField.accept(password)
             })
             .disposed(by: disposeBag)
         
