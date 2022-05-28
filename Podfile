@@ -9,10 +9,14 @@ target 'TTV' do
   pod 'RxSwift'
   pod 'RxRelay'
   pod 'SnapKit'
+  pod 'RxCocoa'
 
   target 'TTVTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxTest'
+    pod 'RxSwift'
+    pod 'RxRelay'
   end
 
   target 'TTVUITests' do
