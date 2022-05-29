@@ -115,7 +115,12 @@ final class IntroduceViewController: BaseViewController {
 
     override func bindViewModel() {
         let input = IntroduceViewModel.Input(
-            loginButtonTapEvent: self.loginButton.rx.tap.asObservable(), nextButtonTapEvent: self.nextButton.rx.tap.asObservable())
+            loginButtonTapEvent: self.loginButton.rx.tap.asObservable(),
+            nextButtonTapEvent: self.nextButton.rx.tap.asObservable(),
+            viewSwipeEvent:
+                self.view.rx
+                .swipeGesture(.left, .right)
+                .when(.recognized).asObservable())
         
         let output = self.viewModel?.convert(input: input, disposeBag: self.disposeBag)
         bindIntroduceData(output)
@@ -140,9 +145,11 @@ private extension IntroduceViewController {
         
         output?.isLastIndex
             .asDriver(onErrorJustReturn: false)
-            .drive(onNext: { [weak self] isLastIndex in
-                if isLastIndex {
+            .drive(onNext: { [weak self] result in
+                if result {
                     self?.changePositionLoginButton()
+                } else {
+                    self?.backPositionLoginButton()
                 }
             })
             .disposed(by: self.disposeBag)
@@ -152,6 +159,16 @@ private extension IntroduceViewController {
         nextButton.isHidden = true
         loginButton.snp.remakeConstraints { make in
             make.right.equalToSuperview().inset(margin)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(30)
+            make.width.equalTo(35)
+            make.height.equalTo(25)
+        }
+    }
+    
+    func backPositionLoginButton() {
+        nextButton.isHidden = false
+        loginButton.snp.remakeConstraints { make in
+            make.left.equalToSuperview().inset(margin)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(30)
             make.width.equalTo(35)
             make.height.equalTo(25)

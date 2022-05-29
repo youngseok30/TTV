@@ -36,7 +36,15 @@ class LoginViewModelTests: XCTestCase {
     func test_Login() {
         let loginObserver = self.scheduler.createObserver(String.self)
         
-        self.input = LoginViewModel.Input(emailTextFieldTapEvent: Observable.just(()), passwordTextFieldTapEvent: Observable.just(()), logInTapEvent: Observable.just(()), signUpTapEvent: Observable.just(()), googleLogInTapEvent: Observable.just(()), fbLogInTapEvent: Observable.just(()))
+        self.input = LoginViewModel.Input(
+            emailTextFieldTapEvent: Observable.just(()),
+            passwordTextFieldTapEvent: Observable.just(()),
+            logInTapEvent: Observable.just(()),
+            signUpTapEvent: Observable.just(()),
+            googleLogInTapEvent: Observable.just(()),
+            fbLogInTapEvent: Observable.just(()),
+            emailText: Observable.just(("")),
+            passwordText: Observable.just(("")))
         
         self.output = self.viewModel.convert(input: self.input, disposeBag: self.disposeBag)
         

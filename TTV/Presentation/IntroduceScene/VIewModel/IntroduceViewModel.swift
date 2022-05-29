@@ -18,8 +18,9 @@ final class IntroduceViewModel {
     }
     
     struct Input {
-        let loginButtonTapEvent: Observable<Void>
-        let nextButtonTapEvent: Observable<Void>
+        let loginButtonTapEvent: Observable<Void>?
+        let nextButtonTapEvent: Observable<Void>?
+        let viewSwipeEvent: Observable<UISwipeGestureRecognizer>?
     }
     
     struct Output {
@@ -30,20 +31,31 @@ final class IntroduceViewModel {
     func convert(input: Input, disposeBag: DisposeBag) -> Output {
         let output = Output()
         
-        input.loginButtonTapEvent
+        input.loginButtonTapEvent?
             .subscribe({ [weak self] _ in
                 self?.coordinator?.showAuth()
             })
             .disposed(by: disposeBag)
         
-        input.nextButtonTapEvent
-            .subscribe({ _ in
-                output.introduceData.accept(.init(rawValue: output.introduceData.value.rawValue+1) ?? .III)
-                output.isLastIndex.accept(output.introduceData.value == .III)
+        input.nextButtonTapEvent?
+            .subscribe({ [weak self] _ in
+                self?.bindIntroduceData(output: output)
+            })
+            .disposed(by: disposeBag)
+        
+        input.viewSwipeEvent?
+            .subscribe({ [weak self] result in
+                self?.bindIntroduceData(output: output, result.element?.direction)
             })
             .disposed(by: disposeBag)
         
         return output
+    }
+    
+    private func bindIntroduceData(output: IntroduceViewModel.Output, _ direction: UISwipeGestureRecognizer.Direction? = .left) {
+        let index = direction == .left ? output.introduceData.value.rawValue + 1 : output.introduceData.value.rawValue - 1
+        output.introduceData.accept(.init(rawValue: index) ?? .III)
+        output.isLastIndex.accept(output.introduceData.value == .III)
     }
         
 }
