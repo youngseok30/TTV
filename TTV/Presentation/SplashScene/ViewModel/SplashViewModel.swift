@@ -29,7 +29,14 @@ final class SplashViewModel {
         let output = Output()
         
         input.startButtonTapEvent
-            .subscribe({ [weak self] _ in
+            .subscribe({ _ in
+                output.isStarted.accept(true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.isStarted
+            .filter { $0 }
+            .subscribe(onNext: { [weak self] _ in
                 self?.coordinator?.showIntroduce()
             })
             .disposed(by: disposeBag)
